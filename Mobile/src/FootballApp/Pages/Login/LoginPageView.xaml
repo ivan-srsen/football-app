@@ -1,0 +1,19 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FootballApp.Pages.Login.LoginPageView" >
+
+    <StackLayout>
+        <Entry x:Name="email" Text="{Binding Email}"/>
+        <Entry x:Name="password" Text="{Binding Password}" IsPassword="true"/>
+        
+        <Button Text="Log in"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked="OnLoginClicked"/>
+        
+        <Button Text="Sign up"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked="OnSignupClicked"/>
+    </StackLayout>
+</ContentPage>
