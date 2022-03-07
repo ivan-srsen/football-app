@@ -1,7 +1,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FootballApp.MainPage"
-             BackgroundColor="{DynamicResource SecondaryColor}">
+             x:Class="FootballApp.MainPage">
 
     <ScrollView>
         <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,*"

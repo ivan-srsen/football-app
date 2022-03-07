@@ -24,14 +24,50 @@ build_metadata.AdditionalFiles.ManifestResourceName = FootballApp.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[C:/Users/IvanSrsen/source/repos/FootballApp/Mobile/src/FootballApp/Pages/Login/LoginPageView.xaml]
+[C:/Users/IvanSrsen/source/repos/FootballApp/Mobile/src/FootballApp/Pages/Account/HomePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = FootballApp.Pages.Login.LoginPageView.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\Login\LoginPageView.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\Login\LoginPageView.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FootballApp.Pages.Account.HomePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Account\HomePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Account\HomePage.xaml
 
-[C:/Users/IvanSrsen/source/repos/FootballApp/Mobile/src/FootballApp/Pages/Registration/SignupPageView.xaml]
+[C:/Users/IvanSrsen/source/repos/FootballApp/Mobile/src/FootballApp/Pages/Account/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = FootballApp.Pages.Registration.SignupPageView.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\Registration\SignupPageView.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\Registration\SignupPageView.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FootballApp.Pages.Account.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Account\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Account\LoginPage.xaml
+
+[C:/Users/IvanSrsen/source/repos/FootballApp/Mobile/src/FootballApp/Pages/Account/RegisterPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FootballApp.Pages.Account.RegisterPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Account\RegisterPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Account\RegisterPage.xaml
+
+[C:/Users/IvanSrsen/source/repos/FootballApp/Mobile/src/FootballApp/Pages/App/AppHomePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FootballApp.Pages.App.AppHomePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\App\AppHomePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\App\AppHomePage.xaml
+
+[C:/Users/IvanSrsen/source/repos/FootballApp/Mobile/src/FootballApp/Pages/Calendars/CalendarPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FootballApp.Pages.Calendars.CalendarPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Calendars\CalendarPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Calendars\CalendarPage.xaml
+
+[C:/Users/IvanSrsen/source/repos/FootballApp/Mobile/src/FootballApp/Pages/Tests/TestPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FootballApp.Pages.Tests.TestPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Tests\TestPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Tests\TestPage.xaml
+
+[C:/Users/IvanSrsen/source/repos/FootballApp/Mobile/src/FootballApp/Styles/Base.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FootballApp.Styles.Base.xaml
+build_metadata.AdditionalFiles.TargetPath = Styles\Base.xaml
+build_metadata.AdditionalFiles.RelativePath = Styles\Base.xaml
+
+[C:/Users/IvanSrsen/source/repos/FootballApp/Mobile/src/FootballApp/Styles/Dark.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FootballApp.Styles.Dark.xaml
+build_metadata.AdditionalFiles.TargetPath = Styles\Dark.xaml
+build_metadata.AdditionalFiles.RelativePath = Styles\Dark.xaml

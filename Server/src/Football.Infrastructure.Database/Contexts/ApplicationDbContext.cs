@@ -12,6 +12,8 @@ namespace Football.Infrastructure.Database.Contexts
         {
         }
 
-        public DbSet<Competitor> Competitors { get; set; }
+        public DbSet<Player> Players { get; set; }
+        public DbSet<Game> Games { get; set; }
+        public DbSet<Participation> Participations { get; set; }
     }
 }

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="FootballApp.Styles.Base"
+                    xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls">
+    
+    <Color x:Key="MutedColor">#d8dee9</Color>
+    <Color x:Key="DarkBackgroundColor">#303030</Color>
+    <Color x:Key="PrimaryColor">#42bafe</Color>
+    <Color x:Key="SeconaryColor">#909090</Color>
+
+    <Style x:Key="BaseStyle"  TargetType="NavigationPage">
+        <Setter Property="BackgroundColor" 
+                Value="{StaticResource DarkBackgroundColor}" />
+    </Style>
+
+    <Style TargetType="Label"
+           Class="box-label">
+        <Setter Property="FontSize"
+                Value="Small" />
+        <Setter Property="FontAttributes"
+                Value="Bold" />
+        <Setter Property="TextColor"
+                Value="{StaticResource MutedColor}" />
+    </Style>
+
+    <Style TargetType="Entry"
+           ApplyToDerivedTypes="True"
+           Class="box-value">
+        <Setter Property="Margin"
+                Value="0, 5, 0, 0" />
+        <Setter Property="TextColor"
+                Value="{StaticResource MutedColor}" />
+    </Style>
+
+    <Style TargetType="Grid"
+           Class="box-row">
+        <Setter Property="Padding"
+                Value="0, 10" />
+        <Setter Property="RowSpacing"
+                Value="0" />
+        <Setter Property="ColumnSpacing"
+                Value="10" />
+    </Style>
+    
+    <!-- Box -->
+    
+    <Style TargetType="StackLayout"
+           Class="box">
+        <Setter Property="Padding"
+                Value="10, 0" />
+        <Setter Property="Spacing"
+                Value="0" />
+    </Style>
+
+    <Style TargetType="StackLayout"
+           Class="box-row">
+        <Setter Property="Padding"
+                Value="0, 10" />
+        <Setter Property="Spacing"
+                Value="0" />
+    </Style>
+
+    <Style TargetType="Label"
+           Class="text-lg"
+           ApplyToDerivedTypes="True">
+        <Setter Property="FontSize"
+                Value="Large" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <Style TargetType="Button"
+           Class="btn-primary"
+           ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor"
+                Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="TextColor"
+                Value="White" />
+    </Style>
+
+    <Style TargetType="Button"
+           Class="btn-secondary"
+           ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor"
+                Value="{DynamicResource SeconaryColor}" />
+        <Setter Property="TextColor"
+                Value="White" />
+    </Style>
+</ResourceDictionary>

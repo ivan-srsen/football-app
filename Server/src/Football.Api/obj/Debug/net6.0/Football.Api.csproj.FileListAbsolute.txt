@@ -72,3 +72,4 @@ C:\Users\IvanSrsen\source\repos\FootballApp\Server\src\Football.Api\bin\Debug\ne
 C:\Users\IvanSrsen\source\repos\FootballApp\Server\src\Football.Api\bin\Debug\net6.0\MediatR.dll
 C:\Users\IvanSrsen\source\repos\FootballApp\Server\src\Football.Api\bin\Debug\net6.0\MediatR.Contracts.dll
 C:\Users\IvanSrsen\source\repos\FootballApp\Server\src\Football.Api\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\IvanSrsen\source\repos\FootballApp\Server\src\Football.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

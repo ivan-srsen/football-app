@@ -42,7 +42,6 @@ com.google.android.material.tabs.TabLayout;C:\Users\IvanSrsen\source\repos\Footb
 declare-styleable;C:\Users\IvanSrsen\source\repos\FootballApp\Mobile\src\FootballApp\obj\Debug\net6.0-android\lp\117\jl\res\values\attrs.xml
 declare-styleable;C:\Users\IvanSrsen\source\repos\FootballApp\Mobile\src\FootballApp\obj\Debug\net6.0-android\lp\119\jl\res\values\attr.xml
 domain;obj\Debug\net6.0-android\res\xml\network_security_config.xml
-domain.config;obj\Debug\net6.0-android\res\xml\network_security_config.xml
 domain-config;obj\Debug\net6.0-android\res\xml\network_security_config.xml
 external-cache-path;C:\Users\IvanSrsen\source\repos\FootballApp\Mobile\src\FootballApp\obj\Debug\net6.0-android\lp\120\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;C:\Users\IvanSrsen\source\repos\FootballApp\Mobile\src\FootballApp\obj\Debug\net6.0-android\lp\120\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml

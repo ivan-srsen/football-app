@@ -49,7 +49,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\Registration\SignupPageView.xaml">
+	  <None Remove="Resources\Images\soccer_player.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Styles\Base.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Styles\Dark.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

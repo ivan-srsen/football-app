@@ -1,0 +1,26 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FootballApp.Pages.Account.LoginPage" 
+             BackgroundColor="{DynamicResource DarkBackgroundColor}"
+             Title="{Binding PageTitle}">
+
+    <StackLayout Spacing="20">
+        <StackLayout StyleClass="box">
+            <StackLayout StyleClass="box-row">
+                <Label Text="Email"
+                       StyleClass="box-label" />
+                <Entry x:Name="email" Text="{Binding Email}" StyleClass="box-value"/>
+            </StackLayout>
+            <StackLayout StyleClass="box-row">
+                <Label Text="Password" StyleClass="box-label" />
+                <Entry x:Name="password" Text="{Binding Password}" IsPassword="true" StyleClass="box-value"/>
+            </StackLayout>
+            <StackLayout Padding="0, 5">
+                <Button 
+                    Text="Log in"
+                    StyleClass="btn-primary"
+                    Command="{Binding SubmitCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

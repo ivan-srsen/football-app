@@ -3,12 +3,20 @@
   <PropertyGroup>
     <ActiveDebugFramework>net6.0-android</ActiveDebugFramework>
     <IsFirstTimeProjectOpen>False</IsFirstTimeProjectOpen>
-    <ActiveDebugProfile>Pixel 5 - API 30 (Android 11.0 - API 30)</ActiveDebugProfile>
-    <SelectedDevice>pixel_5_-_api_30</SelectedDevice>
-    <DefaultDevice>pixel_5_-_api_30</DefaultDevice>
+    <ActiveDebugProfile>Galaxy Nexus - API 30 (Android 11.0 - API 30)</ActiveDebugProfile>
+    <SelectedDevice>galaxy_nexus_-_api_30</SelectedDevice>
+    <DefaultDevice>galaxy_nexus_-_api_30</DefaultDevice>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetPlatformIdentifier)'=='iOS'">
-    <RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
-    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
+    <PlatformTarget>arm64</PlatformTarget>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-android|AnyCPU'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <ItemGroup>
+    <MauiXaml Update="Styles\Base.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+  </ItemGroup>
 </Project>

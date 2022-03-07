@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace FootballApp.Services
+﻿namespace FootballApp.Services
 {
     public class UserService
     {
@@ -14,12 +12,8 @@ namespace FootballApp.Services
         public bool IsAuthenticated()
         {
             var token = _tokenService.AccessToken;
-            if (string.IsNullOrEmpty(token))
-            {
-                return false;
-            }
-
-            return true;
+            
+            return !string.IsNullOrEmpty(token);
         }
     }
 }

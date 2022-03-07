@@ -1,5 +1,7 @@
 using Football.Api.Controllers;
+using Football.Api.Extensions;
 using Football.Api.Middlewares;
+using Football.Api.Settings;
 using Football.Core.Users;
 using Football.Infrastructure.Database.Contexts;
 using MediatR;
@@ -14,6 +16,9 @@ var configuration = builder.Configuration;
 services.AddControllers();
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
+services.AddAuthCustom(configuration);
+
+services.AddTransient<AppSettingsProvider>();
 
 builder.Services.AddIdentityCore<ApplicationUser>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -36,6 +41,9 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.User.RequireUniqueEmail = false;
 });
 
+services.Configure<AppSettings>(
+    builder.Configuration.GetSection("AppSettings"));
+
 services.AddMediatR(typeof(AccountsController));
 
 services.AddDbContext<ApplicationDbContext>(options =>
@@ -56,6 +64,7 @@ else
 
 app.UseMiddleware<ErrorHandlerMiddleware>();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

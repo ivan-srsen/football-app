@@ -1,9 +1,13 @@
 ﻿using FootballApp.Helpers.Forms;
+using FootballApp.Pages.Account;
+using FootballApp.Pages.App;
 using FootballApp.Pages.Login;
 using FootballApp.Services;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
+using System;
 using Application = Microsoft.Maui.Controls.Application;
 
 namespace FootballApp
@@ -11,30 +15,36 @@ namespace FootballApp
 	public partial class App : Application
 	{
         private readonly UserService _userService;
-        private readonly MainPage mainPage;
-        private readonly LoginPageView loginPageView;
+        
+        private readonly IServiceProvider _services;
 
-        public App(UserService userService, MainPage mainPage, LoginPageView loginPageView)
+        public App(UserService userService, IServiceProvider services, TokenService tokenService)
 		{
 			InitializeComponent();
 
+            // TODO remove
+            tokenService.AccessToken = "";
+
 			_userService = userService;
-            this.mainPage = mainPage;
-            this.loginPageView = loginPageView;
+            _services = services;
+            
             SetMainPage();
         }
 
 		private void SetMainPage()
         {
-            var isSignedIn = _userService.IsAuthenticated();
+            var authed = _userService.IsAuthenticated();
 
-            if (isSignedIn)
-            {
-                Current.MainPage = new NavigationPage(this.mainPage);
+            if (authed) {
+                var appHomePage = _services.GetService<AppHomePage>();
+
+                Current.MainPage = new NavigationPage(appHomePage);
             }
             else
             {
-                Current.MainPage = new NavigationPage(this.loginPageView);
+                var homePage = _services.GetService<HomePage>();
+
+                Current.MainPage = new NavigationPage(homePage);
             }
         }
 	}

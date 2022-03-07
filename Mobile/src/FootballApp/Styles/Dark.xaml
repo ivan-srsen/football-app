@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="FootballApp.Styles.Dark"
+                    xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls">
+    <Color x:Key="MutedColor">#d8dee9</Color>
+    <Color x:Key="DarkBackgroundColor">#303030</Color>
+</ResourceDictionary>

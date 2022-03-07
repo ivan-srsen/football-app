@@ -1,0 +1,36 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FootballApp.Pages.Account.RegisterPage"
+             BackgroundColor="{DynamicResource DarkBackgroundColor}"
+             Title="{Binding PageTitle}">
+
+    <StackLayout Spacing="20">
+        <StackLayout StyleClass="box">
+            <StackLayout StyleClass="box-row">
+                <Label Text="Email"
+                       StyleClass="box-label" />
+                <Entry x:Name="email"
+                       Text="{Binding Email}"
+                       Keyboard="Email"
+                       StyleClass="box-value" />
+            </StackLayout>
+            <StackLayout StyleClass="box-row">
+                <Label Text="Password" StyleClass="box-label" />
+                <Entry x:Name="password" Text="{Binding Password}" IsPassword="true"/>
+            </StackLayout>
+            <StackLayout StyleClass="box-row">
+                <Label Text="First name" StyleClass="box-label" />
+                <Entry x:Name="firstName" Text="{Binding FirstName}" StyleClass="box-value"/>
+            </StackLayout>
+            <StackLayout StyleClass="box-row">
+                <Label Text="Last name" StyleClass="box-label" />
+                <Entry x:Name="lastName" Text="{Binding LastName}"/>
+            </StackLayout>
+            <StackLayout Padding="0, 5">
+                <Button Text="Sign up"
+                        StyleClass="btn-primary"
+                            Command="{Binding SubmitCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

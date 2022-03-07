@@ -1,4 +1,4 @@
-﻿using Football.Api.Features.Registrations;
+﻿using Football.Api.Features.Account;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,10 +23,12 @@ namespace Football.Api.Controllers
             return Ok();
         }
 
-        [HttpGet("test")]
-        public IActionResult Test()
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginCommand command)
         {
-            return Ok();
+            var response = await _mediatr.Send(command);
+
+            return Ok(response);
         }
     }
 }

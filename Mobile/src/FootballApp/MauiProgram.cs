@@ -3,11 +3,10 @@ using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using FootballApp.Services;
 using FootballApp.Helpers.Forms.Pages;
-using FootballApp.Pages.Registration;
-using FootballApp.Pages.Login;
-using FootballApp.Helpers.Forms;
-using System.Net.Http;
-using System;
+using FootballApp.Pages.Account;
+using FootballApp.Pages;
+using FootballApp.Pages.App;
+using FootballApp.Pages.Calendars;
 
 namespace FootballApp
 {
@@ -18,6 +17,7 @@ namespace FootballApp
 			var builder = MauiApp.CreateBuilder();
 			builder
 				.UseMauiApp<App>()
+				.ConfigureViewModels()
 				.ConfigureFonts(fonts =>
 				{
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -25,29 +25,18 @@ namespace FootballApp
 
 			var services = builder.Services;
 
-			services.AddSingleton<MainPage>();
-			services.AddSingleton<LoginPageView>();
-			services.AddSingleton<LoginPageViewModel>();
+			services.AddTransient<HomePage>();
+			services.AddTransient<RegisterPage>();
+			services.AddTransient<LoginPage>();
+			services.AddTransient<CalendarPage>();
+			services.AddTransient<TabsPage>();
+			services.AddTransient<AppHomePage>();
 			services.AddScoped<IPages, AppPages>();
 			services.AddSingleton<UserService>();
 			services.AddScoped<TokenService>();
-			services.AddSingleton<SignupPageView>();
-			services.AddSingleton<SignUpPageViewModel>();
-			services.AddHttpClient<FootballApiService>(c => c.BaseAddress= new Uri("http://10.0.2.2:7222")).ConfigurePrimaryHttpMessageHandler(GetInsecureHandler);
+			services.AddSingleton<ApiService>();
 
 			return builder.Build();
-		}
-
-		public static HttpClientHandler GetInsecureHandler()
-		{
-			HttpClientHandler handler = new HttpClientHandler();
-			handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
-			{
-				if (cert.Issuer.Equals("CN=localhost"))
-					return true;
-				return errors == System.Net.Security.SslPolicyErrors.None;
-			};
-			return handler;
 		}
 	}
 }

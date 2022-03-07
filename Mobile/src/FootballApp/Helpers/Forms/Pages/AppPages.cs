@@ -1,21 +1,18 @@
-﻿using FootballApp.Pages.Login;
-using FootballApp.Pages.Registration;
-using Microsoft.Maui;
+﻿using FootballApp.Pages.Account;
 using Microsoft.Maui.Controls;
-using System.Drawing;
 using System.Threading.Tasks;
 
 namespace FootballApp.Helpers.Forms.Pages
 {
     public class AppPages : IPages
     {
-        private readonly SignupPageView _signupPageView;
-        private readonly LoginPageView _loginPageView;
+        private readonly RegisterPage _registerPage;
+        private readonly LoginPage _loginPage;
 
-        public AppPages(SignupPageView signupPageView, LoginPageView loginPageView)
+        public AppPages(RegisterPage registerPage, LoginPage loginPage)
         {
-            _signupPageView = signupPageView;
-            _loginPageView = loginPageView;
+            _registerPage = registerPage;
+            _loginPage = loginPage;
         }
 
         NavigationPage mainPage
@@ -25,13 +22,13 @@ namespace FootballApp.Helpers.Forms.Pages
         }
 
         public void OpenLogin() =>
-            SwitchMainPage(_loginPageView);
+            SwitchMainPage(_loginPage);
 
         public void OpenMain() =>
             SwitchMainPage(new MainPage());
 
         public async Task OpenSignup() =>
-            await pushPage(_signupPageView);
+            await pushPage(_registerPage);
 
         async Task pushPage(Page newPage, string title = null, bool isModal = false)
         {
