@@ -1,45 +1,92 @@
-﻿namespace Football.Core.Common
+﻿using MediatR;
+
+namespace Football.Core.Common
 {
-    public abstract class Entity<TId> : IEquatable<Entity<TId>>
+    public abstract class Entity
     {
-        private TId _id;
 
-        public TId Id
+        int? _requestedHashCode;
+        int _Id;
+
+        public virtual int Id
         {
-            get { return _id; }
-            set
+            get
             {
-                if (Equals(value, default(TId)))
-                {
-                    throw new ArgumentException("The ID cannot be the default value.", "id");
-                }
-
-                _id = value;
+                return _Id;
             }
+            protected set
+            {
+                _Id = value;
+            }
+        }
+
+        private List<INotification> _domainEvents;
+        public IReadOnlyCollection<INotification>? DomainEvents => _domainEvents?.AsReadOnly();
+
+        public void AddDomainEvent(INotification eventItem)
+        {
+            _domainEvents = _domainEvents ?? new List<INotification>();
+            _domainEvents.Add(eventItem);
+        }
+
+        public void RemoveDomainEvent(INotification eventItem)
+        {
+            _domainEvents?.Remove(eventItem);
+        }
+
+        public void ClearDomainEvents()
+        {
+            _domainEvents?.Clear();
+        }
+
+        public bool IsTransient()
+        {
+            return this.Id == default(Int32);
         }
 
         public override bool Equals(object obj)
         {
-            var entity = obj as Entity<TId>;
-            if (entity != null)
-            {
-                return this.Equals(entity);
-            }
-            return base.Equals(obj);
+            if (obj == null || !(obj is Entity))
+                return false;
+
+            if (Object.ReferenceEquals(this, obj))
+                return true;
+
+            if (this.GetType() != obj.GetType())
+                return false;
+
+            Entity item = (Entity)obj;
+
+            if (item.IsTransient() || this.IsTransient())
+                return false;
+            else
+                return item.Id == this.Id;
         }
 
         public override int GetHashCode()
         {
-            return Id.GetHashCode();
+            if (!IsTransient())
+            {
+                if (!_requestedHashCode.HasValue)
+                    _requestedHashCode = this.Id.GetHashCode() ^ 31; // XOR for random distribution (http://blogs.msdn.com/b/ericlippert/archive/2011/02/28/guidelines-and-rules-for-gethashcode.aspx)
+
+                return _requestedHashCode.Value;
+            }
+            else
+                return base.GetHashCode();
+
+        }
+        public static bool operator ==(Entity left, Entity right)
+        {
+            if (Object.Equals(left, null))
+                return (Object.Equals(right, null)) ? true : false;
+            else
+                return left.Equals(right);
         }
 
-        public bool Equals(Entity<TId> other)
+        public static bool operator !=(Entity left, Entity right)
         {
-            if (other == null)
-            {
-                return false;
-            }
-            return Id.Equals(other.Id);
+            return !(left == right);
         }
     }
 }

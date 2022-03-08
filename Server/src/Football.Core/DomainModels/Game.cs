@@ -10,6 +10,7 @@ namespace Football.Core.DomainModels
         public PlayerNumber PlayerNumber { get; private set; }
         public GameResult? GameResult { get; protected set; }
         public DateTime PlayingTime { get; protected set; }
+
         private List<Participation> _participations = new List<Participation>();
         public IReadOnlyCollection<Participation> Participations => _participations.AsReadOnly();
 
@@ -30,6 +31,19 @@ namespace Football.Core.DomainModels
             Team2Name = team2Name;
             PlayingTime = playingTime;
             PlayerNumber = playerNumber;
+        }
+
+        public void EnrollAllPlayers(IEnumerable<Player> players)
+        {
+            foreach(var player in players)
+            {
+                if (_participations.Any(x => x.Player == player))
+                    throw new InvalidOperationException("Some players are already enrolled");
+
+                var participation = new Participation(this, player);
+
+                _participations.Add(participation);
+            }
         }
     }
 }

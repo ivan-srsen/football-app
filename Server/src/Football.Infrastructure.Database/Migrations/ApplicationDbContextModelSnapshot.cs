@@ -99,6 +99,36 @@ namespace Football.Infrastructure.Database.Migrations
                     b.ToTable("Players");
                 });
 
+            modelBuilder.Entity("Football.Core.DomainModels.RecurringGame", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("FromDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("PlayingTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Team1Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Team2Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ToDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RecurringGames");
+                });
+
             modelBuilder.Entity("Football.Core.Users.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -362,6 +392,57 @@ namespace Football.Infrastructure.Database.Migrations
                     b.Navigation("Game");
 
                     b.Navigation("Player");
+                });
+
+            modelBuilder.Entity("Football.Core.DomainModels.RecurringGame", b =>
+                {
+                    b.OwnsOne("Football.Core.DomainModels.RecurringGame+WeekDay", "Day", b1 =>
+                        {
+                            b1.Property<int>("RecurringGameId")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Name")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<int>("Value")
+                                .HasColumnType("int")
+                                .HasColumnName("Day");
+
+                            b1.HasKey("RecurringGameId");
+
+                            b1.ToTable("RecurringGames");
+
+                            b1.WithOwner()
+                                .HasForeignKey("RecurringGameId");
+                        });
+
+                    b.OwnsOne("Football.Core.DomainModels.PlayerNumber", "PlayerNumber", b1 =>
+                        {
+                            b1.Property<int>("RecurringGameId")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Name")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<int>("Value")
+                                .HasColumnType("int")
+                                .HasColumnName("PlayerNumber");
+
+                            b1.HasKey("RecurringGameId");
+
+                            b1.ToTable("RecurringGames");
+
+                            b1.WithOwner()
+                                .HasForeignKey("RecurringGameId");
+                        });
+
+                    b.Navigation("Day")
+                        .IsRequired();
+
+                    b.Navigation("PlayerNumber")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

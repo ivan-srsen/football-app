@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "02816086-61d1-4f49-962f-94f7a2029c83": {
+      "ProjectGuid": "02816086-61d1-4f49-962f-94f7a2029c83",
+      "DisplayName": "Football.Api",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "0ab7427e-1c77-4ae1-8dd0-4a73c087ef9a": {
+      "ProjectGuid": "0ab7427e-1c77-4ae1-8dd0-4a73c087ef9a",
+      "DisplayName": "Football.Infrastructure.Database",
+      "ColorIndex": 1
+    },
+    "14266119-756d-40bb-90dd-dd38d3920102": {
+      "ProjectGuid": "14266119-756d-40bb-90dd-dd38d3920102",
+      "DisplayName": "Football.Core",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

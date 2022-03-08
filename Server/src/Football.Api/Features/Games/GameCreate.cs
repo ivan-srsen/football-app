@@ -30,8 +30,12 @@ namespace Football.Api.Features.Games
             var playerNumber = Enumeration.FromValue<PlayerNumber>(request.PlayerNumber);
 
             var game = new Game(request.PlayingTime, request.Team1Name, request.Team2Name, playerNumber);
+            
+            game.EnrollAllPlayers(players);
 
-            var addedGame = (await _dbContext.Games.AddAsync(game)).Entity;
+            await _dbContext.Games.AddAsync(game);
+
+            return Unit.Value;
         }
     }
 }

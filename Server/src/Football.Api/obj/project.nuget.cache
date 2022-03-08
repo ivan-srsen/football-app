@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "B+6ZsFLDyaSm2XgNmS8iperAaKIZcz4fu/wVgc/bbwWBonPHHEULrkCGhZVH74vjSj/iXv1s0rXFnY/8cpkdKA==",
+  "dgSpecHash": "2lkPoqYsjQxA5tSEG6/bfH60/Xvu/Y1yTulRtcgV7WXsrzr6i7hWTMHxIw6obcYD8Mal98FrazYLnNneewPcBw==",
   "success": true,
   "projectFilePath": "C:\\Users\\IvanSrsen\\source\\repos\\FootballApp\\Server\\src\\Football.Api\\Football.Api.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,8 @@
     "C:\\Users\\IvanSrsen\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\IvanSrsen\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\IvanSrsen\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\IvanSrsen\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\2.1.1\\microsoft.extensions.fileproviders.abstractions.2.1.1.nupkg.sha512",
+    "C:\\Users\\IvanSrsen\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\2.1.1\\microsoft.extensions.hosting.abstractions.2.1.1.nupkg.sha512",
     "C:\\Users\\IvanSrsen\\.nuget\\packages\\microsoft.extensions.identity.core\\6.0.2\\microsoft.extensions.identity.core.6.0.2.nupkg.sha512",
     "C:\\Users\\IvanSrsen\\.nuget\\packages\\microsoft.extensions.identity.stores\\6.0.2\\microsoft.extensions.identity.stores.6.0.2.nupkg.sha512",
     "C:\\Users\\IvanSrsen\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
@@ -44,6 +46,9 @@
     "C:\\Users\\IvanSrsen\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\IvanSrsen\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\IvanSrsen\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\IvanSrsen\\.nuget\\packages\\quartz\\3.3.3\\quartz.3.3.3.nupkg.sha512",
+    "C:\\Users\\IvanSrsen\\.nuget\\packages\\quartz.extensions.dependencyinjection\\3.3.3\\quartz.extensions.dependencyinjection.3.3.3.nupkg.sha512",
+    "C:\\Users\\IvanSrsen\\.nuget\\packages\\quartz.extensions.hosting\\3.3.3\\quartz.extensions.hosting.3.3.3.nupkg.sha512",
     "C:\\Users\\IvanSrsen\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\IvanSrsen\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\IvanSrsen\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

@@ -7,6 +7,7 @@ using Football.Infrastructure.Database.Contexts;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Quartz;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,13 @@ services.AddControllers();
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
 services.AddAuthCustom(configuration);
+
+services.AddQuartz(q =>
+{
+    q.UseMicrosoftDependencyInjectionJobFactory();
+});
+
+services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 
 services.AddTransient<AppSettingsProvider>();
 

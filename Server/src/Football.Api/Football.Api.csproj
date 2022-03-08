@@ -17,11 +17,14 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Quartz" Version="3.3.3" />
+    <PackageReference Include="Quartz.Extensions.Hosting" Version="3.3.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Football.BackgroundJobs\Football.BackgroundJobs.csproj" />
     <ProjectReference Include="..\Football.Core\Football.Core.csproj" />
     <ProjectReference Include="..\Football.Infrastructure.Database\Football.Infrastructure.Database.csproj" />
   </ItemGroup>
