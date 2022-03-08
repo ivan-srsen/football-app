@@ -13,6 +13,8 @@ namespace Football.Core.DomainModels
         private List<Participation> _participations = new List<Participation>();
         public IReadOnlyCollection<Participation> Participations => _participations.AsReadOnly();
 
+        protected Game() { }
+
         public Game(DateTime playingTime, string team1Name, string team2Name, PlayerNumber playerNumber)
         {
             if (playingTime <= DateTime.Now.AddHours(1))

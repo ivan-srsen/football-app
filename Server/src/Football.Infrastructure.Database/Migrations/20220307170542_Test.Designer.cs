@@ -4,6 +4,7 @@ using Football.Infrastructure.Database.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Football.Infrastructure.Database.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220307170542_Test")]
+    partial class Test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,6 +31,9 @@ namespace Football.Infrastructure.Database.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("PlayerNumber")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("PlayingTime")
                         .HasColumnType("datetime2");
@@ -299,27 +304,6 @@ namespace Football.Infrastructure.Database.Migrations
 
             modelBuilder.Entity("Football.Core.DomainModels.Game", b =>
                 {
-                    b.OwnsOne("Football.Core.DomainModels.PlayerNumber", "PlayerNumber", b1 =>
-                        {
-                            b1.Property<int>("GameId")
-                                .HasColumnType("int");
-
-                            b1.Property<string>("Name")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
-
-                            b1.Property<int>("Value")
-                                .HasColumnType("int")
-                                .HasColumnName("PlayerNumber");
-
-                            b1.HasKey("GameId");
-
-                            b1.ToTable("Games");
-
-                            b1.WithOwner()
-                                .HasForeignKey("GameId");
-                        });
-
                     b.OwnsOne("Football.Core.ValueObjects.GameResult", "GameResult", b1 =>
                         {
                             b1.Property<int>("GameId")
@@ -340,9 +324,6 @@ namespace Football.Infrastructure.Database.Migrations
                         });
 
                     b.Navigation("GameResult");
-
-                    b.Navigation("PlayerNumber")
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Football.Core.DomainModels.Participation", b =>

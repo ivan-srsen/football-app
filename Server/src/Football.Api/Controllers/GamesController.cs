@@ -28,5 +28,6 @@ namespace Football.Api.Controllers
         {
             await _mediator.Send(command);
         }
+
     }
 }

@@ -37,8 +37,8 @@ namespace Football.Api.Features.Games
         public async Task<GamePreviewResponse> Handle(GamePreviewQuery request, CancellationToken cancellationToken)
         {
             var games = await _dbContext.Games.Where(g =>
-            g.DateTime >= DateTime.Now.AddDays(-7) &&
-            g.DateTime <= DateTime.Now.AddDays(7))
+            g.PlayingTime >= DateTime.Now.AddDays(-7) &&
+            g.PlayingTime <= DateTime.Now.AddDays(7))
                 .Include(c => c.Participations)
                 .ToListAsync();
 
@@ -54,7 +54,7 @@ namespace Football.Api.Features.Games
                 Id = game.Id,
                 Team1Name = game.Team1Name,
                 Team2Name = game.Team2Name,
-                DateTime = game.DateTime,
+                DateTime = game.PlayingTime,
                 NumberOfAttendees = game.Participations.Where(p => p.Status == ParticipationStatus.Attending).Count()
             };
         }

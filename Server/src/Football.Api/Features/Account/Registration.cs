@@ -48,7 +48,7 @@ namespace Football.Api.Features.Account
 
             var competitor = new Player(firstName, lastName, competitorPosition);
             
-            await _context.Competitors.AddAsync(competitor, cancellationToken);
+            await _context.Players.AddAsync(competitor, cancellationToken);
 
             await _context.SaveChangesAsync(cancellationToken);
 

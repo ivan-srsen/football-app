@@ -1,12 +1,13 @@
-﻿using Football.Core.Common;
-
-namespace Football.Core.DomainModels
+﻿namespace Football.Core.DomainModels
 {
-    public class Participation : AggregateRoot<int>
+    public class Participation
     {
+        public int Id { get; private set; }
         public Game Game { get; private set; }
         public Player Player { get; private set; }
         public ParticipationStatus Status { get; private set; }
+
+        private Participation() { }
 
         public Participation(Game game, Player player)
         {
